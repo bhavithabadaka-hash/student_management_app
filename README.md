@@ -1,97 +1,51 @@
-# Student Management System Using Flutter
+# Student Management System – Flutter
 
-A mobile application built with Flutter and Dart to manage student records locally using SQLite.
+Flutter/Dart student records app with local SQLite storage plus ten syllabus-aligned Flutter lab experiments.
 
 ## Features
-- Dashboard with total student count
-- Add student records
-- View saved student records
-- Edit student information
-- Delete students with confirmation
-- Search by name, roll number, or course
-- Form validation for required fields, phone, and email
-- Local SQLite storage; records remain on the device
-- Material 3 user interface
+- Add, view, edit, delete and search student records
+- Dashboard student count
+- Form validation for name, roll number, course, 10-digit phone and email
+- SQLite local storage; no cloud sync
+- Material 3 interface
 
-## Student fields
-- Full name
-- Roll number (must be unique)
-- Course / department
-- Phone number
-- Email address
+## Stack
+Flutter, Dart, sqflite, path, Provider (practice), http (REST API experiment), flutter_test.
 
-## Requirements
-- Flutter SDK
-- Dart SDK (included with Flutter)
-- Android Studio or VS Code
-- Android emulator or physical Android device
+## Run
+Install Flutter: https://docs.flutter.dev/get-started/install
 
-## Run the app
 ```bash
+flutter doctor
+flutter create . # only if native platform folders are missing
 flutter pub get
 flutter run
-```
-
-## Run tests
-```bash
+flutter analyze
 flutter test
+flutter build apk --release
 ```
 
-## Project structure
-```text
-lib/
-├── main.dart
-├── database/
-│   └── database_helper.dart
-├── models/
-│   └── student.dart
-└── screens/
-    ├── home_screen.dart
-    └── student_form_screen.dart
-```
+## Structure
+`lib/` contains the main app; `experiments/01...10/` contains individual lab exercises; `database/schema.sql` contains SQL; `docs/commands.md` lists commands; `screenshots/README.md` explains how to capture genuine outputs.
+
+## Experiments
+1. Flutter/Dart setup and language basics
+2. Widgets and Row/Column/Stack layouts
+3. Responsive UI and breakpoints
+4. Navigator and named routes
+5. Stateful/Stateless widgets, setState and Provider
+6. Custom widgets and themes
+7. Forms and validation
+8. Fade/slide-style animations
+9. REST API fetch and display
+10. Widget tests and debugging
+
+Each experiment has its own folder with a Dart example and README. Run the primary app from `lib/main.dart`; copy an experiment widget into a route to run it.
 
 ## Database
-The app uses SQLite through `sqflite`. Student records are stored locally on the device. They are not automatically synced to the cloud.
+SQLite table is created automatically on first app launch. See `database/schema.sql` for schema and CRUD/search examples. Records stay on the device.
 
-## GitHub commits
-This repository includes 15 incremental commits documenting the project setup and feature development.
+## Screenshots
+Capture real screenshots from your emulator/device and place them in `screenshots/`. No fabricated output images are included. See `screenshots/README.md`.
 
-## Future improvements
-- Attendance tracking
-- Marks and grades
-- Export to CSV
-- Student profile photos
-- Cloud backup and authentication
-
-## License
-This project is provided for educational use.
-
-<!-- Commit 01: Create project README -->
-
-<!-- Commit 02: Configure Flutter dependencies -->
-
-<!-- Commit 03: Add Student model -->
-
-<!-- Commit 04: Set up SQLite database helper -->
-
-<!-- Commit 05: Create app entry point and theme -->
-
-<!-- Commit 06: Create student form screen -->
-
-<!-- Commit 07: Add student form validation -->
-
-<!-- Commit 08: Implement local student insertion -->
-
-<!-- Commit 09: Display student records -->
-
-<!-- Commit 10: Add student search -->
-
-<!-- Commit 11: Implement student editing -->
-
-<!-- Commit 12: Add delete confirmation -->
-
-<!-- Commit 13: Show dashboard student statistics -->
-
-<!-- Commit 14: Improve empty states and error handling -->
-
-<!-- Commit 15: Add widget test and final documentation -->
+Educational project / portfolio starter.
